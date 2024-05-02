@@ -4137,7 +4137,7 @@ dependencies = [
 [[package]]
 name = "sp1-core"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "anyhow",
  "arrayref",
@@ -4194,7 +4194,7 @@ dependencies = [
 [[package]]
 name = "sp1-derive"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4213,7 +4213,7 @@ dependencies = [
 [[package]]
 name = "sp1-primitives"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "itertools 0.12.1",
  "lazy_static",
@@ -4226,7 +4226,7 @@ dependencies = [
 [[package]]
 name = "sp1-prover"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "anyhow",
  "backtrace",
@@ -4259,7 +4259,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-circuit"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "bincode",
  "itertools 0.12.1",
@@ -4282,7 +4282,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-compiler"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "backtrace",
  "itertools 0.12.1",
@@ -4308,7 +4308,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-core"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "arrayref",
  "backtrace",
@@ -4342,7 +4342,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-derive"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4352,7 +4352,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-gnark-ffi"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "crossbeam",
  "log",
@@ -4368,7 +4368,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-program"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "array-macro",
  "itertools 0.12.1",
@@ -4395,7 +4395,7 @@ dependencies = [
 [[package]]
 name = "sp1-sdk"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#80eb4839938e41d494fe726b13e366a9b20a22a5"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
 dependencies = [
  "alloy",
  "anyhow",
