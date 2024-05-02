@@ -1,8 +1,9 @@
+//! Exports the solidity verifier to the contracts folder.
+
 use std::path::PathBuf;
 
 use sp1_sdk::artifacts::{export_solidity_verifier, WrapCircuitType};
 
-/// Exports the solidity verifier for the current wrap circuit.
 fn main() {
     sp1_sdk::utils::setup_logger();
 

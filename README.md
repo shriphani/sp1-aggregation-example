@@ -12,6 +12,8 @@ cd script
 RUSTFLAGS='-C target-cpu=native' RUST_LOG=info cargo run --release
 ```
 
+If you are on an AVX-512 machine, you can use the flags `RUSTFLAGS='-C target-cpu=native -C target_feature=+avx512ifma,+avx512vl'` instead.
+
 ## Export Solidity Verifier
 ```
 cd script
