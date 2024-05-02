@@ -15,6 +15,9 @@ const AGGREGATION_ELF: &[u8] =
 const FIBONACCI_ELF: &[u8] =
     include_bytes!("../../programs/fibonacci/elf/riscv32im-succinct-zkvm-elf");
 
+/// An input to the aggregation program.
+/// 
+/// Consists of a proof and a verification key.
 struct AggregationInput {
     pub proof: SP1CompressedProof,
     pub vk: SP1VerifyingKey,
