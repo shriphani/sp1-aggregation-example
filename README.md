@@ -2,8 +2,13 @@
 
 ## Installation
 
-- [Install SP1](https://succinctlabs.github.io/sp1/getting-started/install.html)
-- [Install Go 1.22](https://go.dev/doc/install)
+Install SP1.
+
+```sp1up --version nightly-197dbf088eaaac3826c8615be5e78146b5cbeb65```
+
+Install Go 1.22.
+
+https://go.dev/doc/install
 
 ## Proof Generation
 
