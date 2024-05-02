@@ -1,6 +1,4 @@
-use sp1_helper::build_program;
-
 fn main() {
-    build_program("../aggregation-program");
-    build_program("../simple-program");
+    sp1_helper::build_program("../programs/aggregation");
+    sp1_helper::build_program("../programs/fibonacci");
 }

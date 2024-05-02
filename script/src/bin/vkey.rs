@@ -2,7 +2,7 @@ use aggregation_lib::words_to_bytes_be;
 use sp1_sdk::{mock::MockProver, Prover};
 
 const AGGREGATION_ELF: &[u8] =
-    include_bytes!("../../aggregation-program/elf/riscv32im-succinct-zkvm-elf");
+    include_bytes!("../../../programs/aggregation/elf/riscv32im-succinct-zkvm-elf");
 
 /// Generates the vkey digest for the aggregation program.
 fn main() {

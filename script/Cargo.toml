@@ -19,8 +19,8 @@ sp1-helper = { git = "https://github.com/succinctlabs/sp1.git" }
 
 [[bin]]
 name = "vkey"
-path = "scripts/vkey.rs"
+path = "src/bin/vkey.rs"
 
 [[bin]]
 name = "verifier"
-path = "scripts/verifier.rs"
+path = "src/bin/verifier.rs"

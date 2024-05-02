@@ -196,6 +196,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "fibonacci-program"
+version = "0.1.0"
+dependencies = [
+ "sp1-zkvm",
+]
+
+[[package]]
 name = "funty"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -590,13 +597,6 @@ checksum = "77549399552de45a898a580c1b41d445bf730df867cc44e6c0233bbc4b8329de"
 dependencies = [
  "digest",
  "rand_core",
-]
-
-[[package]]
-name = "simple-program"
-version = "0.1.0"
-dependencies = [
- "sp1-zkvm",
 ]
 
 [[package]]
