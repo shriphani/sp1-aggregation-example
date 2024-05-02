@@ -18,8 +18,8 @@
         "incomplete-features"
     ],
     "rust-analyzer.linkedProjects": [
-        "aggregation-program/Cargo.toml",
-        "simple-program/Cargo.toml",
+        "programs/aggregation/Cargo.toml",
+        "programs/fibonacci/Cargo.toml",
         "lib/Cargo.toml",
         "script/Cargo.toml",
     ],
