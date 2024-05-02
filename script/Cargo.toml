@@ -9,7 +9,7 @@ default-run = "sp1-aggregation-example-script"
 alloy-sol-macro = "0.7.1"
 alloy-sol-types = "0.7.1"
 hex = "0.4.3"
-sp1-sdk = { git = "https://github.com/succinctlabs/sp1.git", branch = "chris/fixes" }
+sp1-sdk = { git = "https://github.com/succinctlabs/sp1.git", rev = "336bdee3f8b5645769a7daf67181be328da23893" }
 tracing = "0.1.40"
 aggregation-lib = { path = "../lib" }
 alloy-primitives = "0.7.1"
