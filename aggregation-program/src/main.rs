@@ -4,18 +4,10 @@
 #![no_main]
 sp1_zkvm::entrypoint!(main);
 
+use aggregation_lib::{commit_proof_pairs, words_to_bytes_le};
 use sha2::Digest;
 use sha2::Sha256;
 use sp1_zkvm::precompiles::verify::verify_sp1_proof;
-
-fn words_to_bytes(words: &[u32; 8]) -> [u8; 32] {
-    let mut bytes = [0u8; 32];
-    for i in 0..8 {
-        let word_bytes = words[i].to_le_bytes();
-        bytes[i * 4..(i + 1) * 4].copy_from_slice(&word_bytes);
-    }
-    bytes
-}
 
 pub fn main() {
     let vkeys = sp1_zkvm::io::read::<Vec<[u32; 8]>>();
@@ -26,7 +18,7 @@ pub fn main() {
         .zip(vkeys.iter())
         .enumerate()
         .for_each(|(i, (vals, vkey))| {
-            println!("vkeys[{}]: {:?}", i, hex::encode(words_to_bytes(vkey)));
+            println!("vkeys[{}]: {:?}", i, hex::encode(words_to_bytes_le(vkey)));
             println!("committed_values[{}]: {:?}", i, hex::encode(vals));
 
             // Get expected pv_digest hash: sha256(input)
@@ -34,9 +26,13 @@ pub fn main() {
             verify_sp1_proof(vkey, &pv_digest.into());
 
             println!("Verified proof for digest: {:?}", hex::encode(pv_digest));
-
-            // TODO: Do something with vkey / input, ex. build and commit to merkle tree
         });
 
     println!("All {} proofs verified successfully!", vkeys.len());
+
+    // TODO: Do something with vkey / input, ex. build and commit to merkle tree
+    // For now we'll just commit to all the (vkey, input) pairs
+
+    let commitment = commit_proof_pairs(&vkeys, &committed_values);
+    sp1_zkvm::io::commit_slice(&commitment);
 }

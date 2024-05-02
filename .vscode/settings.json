@@ -20,6 +20,7 @@
     "rust-analyzer.linkedProjects": [
         "aggregation-program/Cargo.toml",
         "simple-program/Cargo.toml",
+        "lib/Cargo.toml",
         "script/Cargo.toml",
     ],
     "rust-analyzer.showUnlinkedFileNotification": false

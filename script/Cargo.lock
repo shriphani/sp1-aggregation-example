@@ -29,6 +29,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe"
 
 [[package]]
+name = "aggregation-lib"
+version = "0.1.0"
+
+[[package]]
 name = "ahash"
 version = "0.8.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4120,6 +4124,11 @@ dependencies = [
 name = "sp1-aggregation-example-script"
 version = "0.1.0"
 dependencies = [
+ "aggregation-lib",
+ "alloy-primitives",
+ "alloy-sol-macro",
+ "alloy-sol-types",
+ "hex",
  "sp1-helper",
  "sp1-sdk",
  "tracing",
@@ -4128,7 +4137,7 @@ dependencies = [
 [[package]]
 name = "sp1-core"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "anyhow",
  "arrayref",
@@ -4185,7 +4194,7 @@ dependencies = [
 [[package]]
 name = "sp1-derive"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4204,7 +4213,7 @@ dependencies = [
 [[package]]
 name = "sp1-primitives"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "itertools 0.12.1",
  "lazy_static",
@@ -4217,7 +4226,7 @@ dependencies = [
 [[package]]
 name = "sp1-prover"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "anyhow",
  "backtrace",
@@ -4250,7 +4259,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-circuit"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "bincode",
  "itertools 0.12.1",
@@ -4273,7 +4282,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-compiler"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "backtrace",
  "itertools 0.12.1",
@@ -4299,7 +4308,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-core"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "arrayref",
  "backtrace",
@@ -4333,7 +4342,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-derive"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4343,7 +4352,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-gnark-ffi"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "crossbeam",
  "log",
@@ -4359,7 +4368,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-program"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "array-macro",
  "itertools 0.12.1",
@@ -4386,7 +4395,7 @@ dependencies = [
 [[package]]
 name = "sp1-sdk"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#08b4b1b836cb608c5cc3922b9018a9dbcd2a0495"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/fixes#b3b174f8fbeba4ac4be9c14b757bea0c74b77ab7"
 dependencies = [
  "alloy",
  "anyhow",
@@ -4895,7 +4904,7 @@ checksum = "e421abadd41a4225275504ea4d6566923418b7f05506fbc9c0fe86ba7396114b"
 [[package]]
 name = "twirp"
 version = "0.3.0"
-source = "git+https://github.com/github/twirp-rs.git#93d4e4b4a48f9112c943d2925e8dbb1106bd6a18"
+source = "git+https://github.com/github/twirp-rs.git?rev=93d4e4b#93d4e4b4a48f9112c943d2925e8dbb1106bd6a18"
 dependencies = [
  "async-trait",
  "axum",
