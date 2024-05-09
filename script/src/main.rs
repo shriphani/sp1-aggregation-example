@@ -1,11 +1,6 @@
 //! A simple example showing how to aggregate proofs of multiple programs with SP1.
 
-use std::str::FromStr;
-
-use alloy_primitives::U256;
-use alloy_sol_macro::sol;
-use alloy_sol_types::SolType;
-use sp1_sdk::{ProverClient, SP1CompressedProof, SP1Stdin, SP1VerifyingKey};
+use sp1_sdk::{HashableKey, ProverClient, SP1CompressedProof, SP1Stdin, SP1VerifyingKey};
 
 /// A program that aggregates the proofs of the simple program.
 const AGGREGATION_ELF: &[u8] =
@@ -73,7 +68,7 @@ fn main() {
     let inputs = vec![input_1, input_2, input_3];
 
     // Aggregate the proofs.
-    let aggregated_proof = tracing::info_span!("aggregate the proofs").in_scope(|| {
+    tracing::info_span!("aggregate the proofs").in_scope(|| {
         let mut stdin = SP1Stdin::new();
 
         // Write the verification keys.
@@ -86,7 +81,7 @@ fn main() {
         // Write the public values.
         let public_values = inputs
             .iter()
-            .map(|input| input.proof.public_values.buffer.data.clone())
+            .map(|input| input.proof.public_values.to_vec())
             .collect::<Vec<_>>();
         stdin.write::<Vec<Vec<u8>>>(&public_values);
 
@@ -101,23 +96,6 @@ fn main() {
         // Generate the groth16 proof.
         client
             .prove_groth16(&aggregation_pk, stdin)
-            .expect("proving failed")
-    });
-
-    // Print the results.
-    type Uint256_8 = sol! { uint256[8] };
-    let solidity_groth16_proof = Uint256_8::abi_encode(&[
-        U256::from_str(&aggregated_proof.proof.a[0]).unwrap(),
-        U256::from_str(&aggregated_proof.proof.a[1]).unwrap(),
-        U256::from_str(&aggregated_proof.proof.b[0][0]).unwrap(),
-        U256::from_str(&aggregated_proof.proof.b[0][1]).unwrap(),
-        U256::from_str(&aggregated_proof.proof.b[1][0]).unwrap(),
-        U256::from_str(&aggregated_proof.proof.b[1][1]).unwrap(),
-        U256::from_str(&aggregated_proof.proof.c[0]).unwrap(),
-        U256::from_str(&aggregated_proof.proof.c[1]).unwrap(),
-    ]);
-    println!(
-        "solidity groth16 proof: {}",
-        hex::encode(solidity_groth16_proof)
-    );
+            .expect("proving failed");
+    }); 
 }
