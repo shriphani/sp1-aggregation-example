@@ -6,21 +6,10 @@ edition = "2021"
 default-run = "sp1-aggregation-example-script"
 
 [dependencies]
-alloy-sol-macro = "0.7.1"
-alloy-sol-types = "0.7.1"
 hex = "0.4.3"
-sp1-sdk = { git = "https://github.com/succinctlabs/sp1.git", branch = "chris/aggregation-fixes" }
+sp1-sdk = { git = "https://github.com/succinctlabs/sp1.git", rev = "v1.0.0-testnet" }
 tracing = "0.1.40"
 aggregation-lib = { path = "../lib" }
-alloy-primitives = "0.7.1"
 
 [build-dependencies]
-sp1-helper = { git = "https://github.com/succinctlabs/sp1.git" }
-
-[[bin]]
-name = "vkey"
-path = "src/bin/vkey.rs"
-
-[[bin]]
-name = "verifier"
-path = "src/bin/verifier.rs"
+sp1-helper = { git = "https://github.com/succinctlabs/sp1.git", rev = "v1.0.0-testnet" }

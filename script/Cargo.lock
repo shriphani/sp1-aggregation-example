@@ -4125,9 +4125,6 @@ name = "sp1-aggregation-example-script"
 version = "0.1.0"
 dependencies = [
  "aggregation-lib",
- "alloy-primitives",
- "alloy-sol-macro",
- "alloy-sol-types",
  "hex",
  "sp1-helper",
  "sp1-sdk",
@@ -4137,7 +4134,7 @@ dependencies = [
 [[package]]
 name = "sp1-core"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "anyhow",
  "arrayref",
@@ -4177,6 +4174,7 @@ dependencies = [
  "rrs-lib",
  "serde",
  "serde_with",
+ "serial_test",
  "size",
  "snowbridge-amcl",
  "sp1-derive",
@@ -4194,7 +4192,7 @@ dependencies = [
 [[package]]
 name = "sp1-derive"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4204,7 +4202,7 @@ dependencies = [
 [[package]]
 name = "sp1-helper"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git#c47eaabed399309358ffe863abe608192faace99"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "cargo_metadata",
  "chrono",
@@ -4213,7 +4211,7 @@ dependencies = [
 [[package]]
 name = "sp1-primitives"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "itertools 0.12.1",
  "lazy_static",
@@ -4226,13 +4224,16 @@ dependencies = [
 [[package]]
 name = "sp1-prover"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "anyhow",
  "backtrace",
  "bincode",
  "clap",
+ "dirs",
+ "futures",
  "hex",
+ "indicatif",
  "itertools 0.12.1",
  "p3-baby-bear",
  "p3-bn254-fr",
@@ -4240,6 +4241,7 @@ dependencies = [
  "p3-commit",
  "p3-field",
  "rayon",
+ "reqwest 0.11.27",
  "serde",
  "serde_json",
  "sha2",
@@ -4251,6 +4253,9 @@ dependencies = [
  "sp1-recursion-core",
  "sp1-recursion-gnark-ffi",
  "sp1-recursion-program",
+ "subtle-encoding",
+ "tempfile",
+ "tokio",
  "tracing",
  "tracing-appender",
  "tracing-subscriber",
@@ -4259,7 +4264,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-circuit"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "bincode",
  "itertools 0.12.1",
@@ -4282,7 +4287,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-compiler"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "backtrace",
  "itertools 0.12.1",
@@ -4308,14 +4313,13 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-core"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "arrayref",
  "backtrace",
  "ff 0.13.0",
  "hashbrown 0.14.5",
  "itertools 0.12.1",
- "log",
  "p3-air",
  "p3-baby-bear",
  "p3-bn254-fr",
@@ -4342,7 +4346,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-derive"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4352,7 +4356,7 @@ dependencies = [
 [[package]]
 name = "sp1-recursion-gnark-ffi"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "crossbeam",
  "log",
@@ -4362,13 +4366,14 @@ dependencies = [
  "serde",
  "serde_json",
  "sp1-recursion-compiler",
+ "subtle-encoding",
  "tempfile",
 ]
 
 [[package]]
 name = "sp1-recursion-program"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "array-macro",
  "itertools 0.12.1",
@@ -4395,7 +4400,7 @@ dependencies = [
 [[package]]
 name = "sp1-sdk"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=chris/aggregation-fixes#9060b6f412bd0642a655d30b9175128bbbd36959"
+source = "git+https://github.com/succinctlabs/sp1.git?rev=v1.0.0-testnet#e721b246243e40376f7b75d7330e53c7351b727f"
 dependencies = [
  "alloy",
  "anyhow",
@@ -4491,6 +4496,15 @@ name = "subtle"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
+
+[[package]]
+name = "subtle-encoding"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7dcb1ed7b8330c5eed5441052651dd7a12c75e2ed88f2ec024ae1fa3a5e59945"
+dependencies = [
+ "zeroize",
+]
 
 [[package]]
 name = "syn"
