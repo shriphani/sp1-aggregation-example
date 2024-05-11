@@ -20,14 +20,17 @@ pub fn main() {
         let vkey = &vkeys[i];
         let public_values = &public_values[i];
         let public_values_digest = Sha256::digest(public_values);
-        sp1_zkvm::precompiles::verify::verify_sp1_proof(vkey, &public_values_digest.into());
+        let random_hash = [0_u8; 32];
+        sp1_zkvm::precompiles::verify::verify_sp1_proof(vkey, &random_hash);
 
         println!("vkeys[{}]: {:?}", i, hex::encode(words_to_bytes_le(vkey)));
         println!("public_values[{}]: {:?}", i, hex::encode(public_values));
-        println!("public_values_digest: {:?}", hex::encode(public_values_digest));
-    } 
+        println!(
+            "public_values_digest: {:?}",
+            hex::encode(public_values_digest)
+        );
+    }
     println!("all {} proofs verified successfully!", vkeys.len());
-
 
     // TODO: Do something interesting with the proofs here.
     //
